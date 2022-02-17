@@ -12,37 +12,52 @@
 </head>
 
 <body>
-    <h2>The page</h2>
-    <header>
-        <button onclick="addFetchedTextNYT()" id="button1">New York Times news</button>
     
+    <header>
+        <div class="weather">
+            <h2>Toronto</h2>
+            <h10 id="weatherText"></h10>
+            <img id="weatherIcon" src="" width="50" height="50">
+            <h13 id="temp_c"></h13><br>
+            <h13 id="feelsTemp_c"></h13><br>
+        </div>
+        <hr>
+        <button onclick="addFetchedTextNYT()" id="button1">New York Times news</button>
         <button onclick="addFetchedTextTG()" id="button1">The Guardian news</button>
     </header>
 
 
     <div class="container">
         <div class="row">
-            <div class="col-5" id="oneNYT">
+            <img id="img1" src="" class="img-news">
+            <div class="col-5" id="one">
             </div>
-            <div class="col-5" id="twoNYT">
-            </div>
-        </div>
-        <div class="row">
-            <div class="col-5" id="threeNYT">
-            </div>
-            <div class="col-5" id="fourNYT">
+            <img id="img2" src="" class="img-news">
+            <div class="col-5" id="two">            
             </div>
         </div>
         <div class="row">
-            <div class="col-5" id="fiveNYT">
+            <img id="img3" src="" class="img-news">
+            <div class="col-5" id="three">
             </div>
-            <div class="col-5" id="sixNYT">
+            <img id="img4" src="" class="img-news">
+            <div class="col-5" id="four">
             </div>
         </div>
         <div class="row">
-            <div class="col-5" id="sevenNYT">
+            <img id="img5" src="" class="img-news">
+            <div class="col-5" id="five">
             </div>
-            <div class="col-5" id="eightNYT">
+            <img id="img6" src="" class="img-news">
+            <div class="col-5" id="six">
+            </div>
+        </div>
+        <div class="row">
+            <img id="img7" src="" class="img-news">
+            <div class="col-5" id="seven">
+            </div>
+            <img id="img8" src="" class="img-news">
+            <div class="col-5" id="eight">
             </div>
         </div>
     </div>
