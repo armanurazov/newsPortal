@@ -42,10 +42,10 @@ function fetchFromWebTheGuardian() {
 };
 
 function addFetchedTextNYT() {
-    var one = document.getElementById('one');   
+    var one = document.getElementById('one');
     one.innerHTML = articlesArrayNYT[1] + " " + "<br> <a href=" + articlesURLNYT[1] + ">read more</a>";
     document.getElementById("img1").src = articlesImageNYT[1];
-    
+
 
     var one = document.getElementById('two');
     one.innerHTML = articlesArrayNYT[2] + " " + "<br> <a href=" + articlesURLNYT[2] + ">read more</a>";
@@ -112,7 +112,7 @@ function weatherWidget() {
             var imgUrl = "https://" + data.current.condition.icon.slice(2)
             document.getElementById('weatherIcon').src = imgUrl;
             document.getElementById('weatherText').innerHTML = data.current.condition.text;
-            document.getElementById('temp_c').innerHTML =  data.current.temp_c + '°C';
+            document.getElementById('temp_c').innerHTML = data.current.temp_c + '°C';
             document.getElementById('feelsTemp_c').innerHTML = 'Feels like ' + data.current.feelslike_c + '°C';
         })
         .catch(err => console.log(err));
@@ -122,3 +122,43 @@ function weatherWidget() {
 function f1() {
     alert('Booya kasha')
 }
+
+
+// ***********************************************
+//          Geolocation
+// ***********************************************
+
+function getCity(lat, lon) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', "https://us1.locationiq.com/v1/reverse.php?key=pk.64791e25137e71792cfbf3edcf428d25&lat=" +
+        lat + "&lon=" + lon + "&zoom=10&format=json", true);
+    xhr.send();
+    xhr.onreadystatechange = processRequest;
+    xhr.addEventListener("readystatechange", processRequest, false);
+
+    function processRequest(e) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var response = JSON.parse(xhr.responseText);
+            document.getElementById('location').innerHTML = response.address.city;
+            return;
+        }
+    }
+}
+
+var options = {
+    enableHighAccuracy: true,
+    timeout: 5000,
+    maximumAge: 0
+};
+
+function success(pos) {
+    var lat = pos.coords.latitude;
+    var lon = pos.coords.longitude
+    getCity(lat, lon);
+}
+
+function error(err) {
+    console.warn(`ERROR(${err.code}): ${err.message}`);
+}
+
+navigator.geolocation.getCurrentPosition(success, error, options);
