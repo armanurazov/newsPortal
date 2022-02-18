@@ -7,10 +7,13 @@ var articlesURLTG = [''];
 var articlesImageTG = [''];
 
 
-
-
-
-document.onload = fetchFromWebNYT(), fetchFromWebTheGuardian(), weatherWidget(), setDateAndTime(), fetchExchangeRates();
+document.onload =
+    fetchFromWebNYT(),
+    fetchFromWebTheGuardian(),
+    weatherWidget(),
+    setDateAndTime(),
+    fetchExchangeRates(),
+    fetchFromWebMeduza();
 
 
 function setDateAndTime() {
@@ -28,7 +31,6 @@ function fetchExchangeRates() {
     fetch('https://freecurrencyapi.net/api/v2/latest?apikey=256b0ba0-9079-11ec-a76b-c13b60cff3d9')
         .then(res => res.json())
         .then(data => {
-            console.log(data.data.CZK)
             document.getElementById('CAD').innerHTML = data.data.CAD + " 🇨🇦";
             document.getElementById('CZK').innerHTML = data.data.CZK + " 🇨🇿";
             document.getElementById('KZT').innerHTML = data.data.KZT + " 🇰🇿";
@@ -64,6 +66,23 @@ function fetchFromWebTheGuardian() {
                 articlesArrayTG.push(data.response.results[i].webTitle);
                 articlesURLTG.push(data.response.results[i].webUrl);
             }
+        })
+        .catch(err => console.log(err));
+};
+
+function fetchFromWebMeduza() {
+    fetch('https://meduza.io/api/v3/search?chrono=news&page=0&per_page=10&locale=ru')
+        .then(res => res.json())
+        .then(data => {
+            // articlesArrayNYT = [''];
+            // articlesURLNYT = [''];
+            // articlesImageNYT = [''];
+            // for (var i = 0; i < 10; i++) {
+            //     articlesArrayNYT.push(data.results[i].title);
+            //     articlesURLNYT.push(data.results[i].url);
+            //     articlesImageNYT.push(data.results[i].media[0]["media-metadata"][2].url)
+            // }
+            console.log(data);
         })
         .catch(err => console.log(err));
 };
