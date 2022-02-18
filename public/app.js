@@ -10,6 +10,10 @@ var articlesArrayGN = [''];
 var articlesURLGN = [''];
 var articlesImageGN = [''];
 
+var articlesArrayBBC = [''];
+var articlesURLBBC = [''];
+var articlesImageBBC = [''];
+
 
 document.onload =
     fetchFromWebNYT(),
@@ -17,7 +21,8 @@ document.onload =
     weatherWidget(),
     setDateAndTime(),
     fetchExchangeRates(),
-    fetchFromWebGnews();
+    fetchFromWebGnews(),
+    fetchFromWebBBC();
 
 
 function setDateAndTime() {
@@ -71,14 +76,13 @@ function fetchFromWebTheGuardian() {
                 articlesURLTG.push(data.response.results[i].webUrl);
                 articlesImageTG.push(logoTG);
             }
-            console.log(articlesImageTG)
         })
         .catch(err => console.log(err));
 };
 
 function fetchFromWebGnews() {
     fetch('https://gnews.io/api/v4/search?q=example&token=674049e8bdccc70876cee79c89160e93')
-    
+
         .then(res => res.json())
         .then(data => {
             articlesArrayGN = [''];
@@ -89,11 +93,29 @@ function fetchFromWebGnews() {
                 articlesURLGN.push(data.articles[i].url);
                 articlesImageGN.push(data.articles[i].image)
             }
-            console.log(data.articles[1].image);
         })
         .catch(err => console.log(err));
 };
 
+//https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=a1251c7ac6624dbeabccb96f7a7a9ac8
+
+function fetchFromWebBBC() {
+    fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=a1251c7ac6624dbeabccb96f7a7a9ac8')
+
+        .then(res => res.json())
+        .then(data => {
+            articlesArrayGN = [''];
+            articlesURLGN = [''];
+            articlesImageGN = [''];
+            for (var i = 0; i < 10; i++) {
+                articlesArrayBBC.push(data.articles[i].description);
+                articlesURLBBC.push(data.articles[i].url);
+                articlesImageBBC.push(data.articles[i].urlToImage)
+            }
+            console.log(data.articles[1]);
+        })
+        .catch(err => console.log(err));
+};
 
 function addFetchedTextNYT() {
     var one = document.getElementById('one');
@@ -196,6 +218,42 @@ function addFetchedTextGN() {
     one.innerHTML = articlesArrayGN[8] + " " + "<br> <a href=" + articlesURLGN[8] + ">read more</a> <hr>";
     document.getElementById("img8").src = articlesImageGN[8];
 };
+
+
+function addFetchedTextBBC() {
+    var one = document.getElementById('one');
+    one.innerHTML = articlesArrayBBC[1] + " " + "<p></p><a href=" + articlesURLBBC[1] + ">read more</a> <hr>";
+    document.getElementById("img1").src = articlesImageBBC[1];
+
+    var one = document.getElementById('two');
+    one.innerHTML = articlesArrayBBC[2] + " " + "<br> <a href=" + articlesURLBBC[2] + ">read more</a> <hr>";
+    document.getElementById("img2").src = articlesImageBBC[2];
+
+    var one = document.getElementById('three');
+    one.innerHTML = articlesArrayBBC[3] + " " + "<br> <a href=" + articlesURLBBC[3] + ">read more</a> <hr>";
+    document.getElementById("img3").src = articlesImageBBC[3];
+
+    var one = document.getElementById('four');
+    one.innerHTML = articlesArrayBBC[4] + " " + "<br> <a href=" + articlesURLBBC[4] + ">read more</a> <hr>";
+    document.getElementById("img4").src = articlesImageBBC[4];
+
+    var one = document.getElementById('five');
+    one.innerHTML = articlesArrayBBC[5] + " " + "<br> <a href=" + articlesURLBBC[5] + ">read more</a> <hr>";
+    document.getElementById("img5").src = articlesImageBBC[5];
+
+    var one = document.getElementById('six');
+    one.innerHTML = articlesArrayBBC[6] + " " + "<br> <a href=" + articlesURLBBC[6] + ">read more</a> <hr>";
+    document.getElementById("img6").src = articlesImageBBC[6];
+
+    var one = document.getElementById('seven');
+    one.innerHTML = articlesArrayBBC[7] + " " + "<br> <a href=" + articlesURLBBC[7] + ">read more</a> <hr>";
+    document.getElementById("img7").src = articlesImageBBC[7];
+
+    var one = document.getElementById('eight');
+    one.innerHTML = articlesArrayBBC[8] + " " + "<br> <a href=" + articlesURLBBC[8] + ">read more</a> <hr>";
+    document.getElementById("img8").src = articlesImageBBC[8];
+};
+
 
 // fetching the weather widget 
 
