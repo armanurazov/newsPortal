@@ -104,9 +104,9 @@ function fetchFromWebBBC() {
 
         .then(res => res.json())
         .then(data => {
-            articlesArrayGN = [''];
-            articlesURLGN = [''];
-            articlesImageGN = [''];
+            articlesArrayBBC = [''];
+            articlesURLBBC = [''];
+            articlesImageBBC = [''];
             for (var i = 0; i < 10; i++) {
                 articlesArrayBBC.push(data.articles[i].description);
                 articlesURLBBC.push(data.articles[i].url);
