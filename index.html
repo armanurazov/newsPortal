@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests">
-    <title>Document</title>
+    <title>My Portal</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
         integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="/styles/styles.css">
@@ -14,50 +14,60 @@
 <body>
 
     <header>
-        <div class="weather">
-            <h2 id="location">Toronto</h2>
-            <h10 id="weatherText"></h10>
-            <img id="weatherIcon" src="" width="50" height="50">
-            <h13 id="temp_c"></h13><br>
-            <h13 id="feelsTemp_c"></h13><br>
+        <div class="container">
+            <div class="row weather">
+                <div class="col">
+                    <h2 id="location">Toronto</h2>
+                    <h10 id="weatherText"></h10>
+                    <img id="weatherIcon" src="" width="50" height="50">
+                    <h13 id="temp_c"></h13><br>
+                    <h13 id="feelsTemp_c"></h13><br>
+                </div>
+            </div>
+            <hr>
+            <div class="row buttons">
+                <div class="col-6">
+                    <button onclick="addFetchedTextNYT()" id="button1">New York Times news</button>
+                </div>
+                <div class="col-6">
+                    <button onclick="addFetchedTextTG()" id="button1">The Guardian news</button>
+                </div>
+            </div>
         </div>
-        <hr>
-        <button onclick="addFetchedTextNYT()" id="button1">New York Times news</button>
-        <button onclick="addFetchedTextTG()" id="button1">The Guardian news</button>
     </header>
 
 
     <div class="container">
         <div class="row">
             <img id="img1" src="" class="img-news">
-            <div class="col-5" id="one">
+            <div class="col-5 article" id="one">
             </div>
             <img id="img2" src="" class="img-news">
-            <div class="col-5" id="two">
+            <div class="col-5 article" id="two">
             </div>
         </div>
         <div class="row">
             <img id="img3" src="" class="img-news">
-            <div class="col-5" id="three">
+            <div class="col-5 article" id="three">
             </div>
             <img id="img4" src="" class="img-news">
-            <div class="col-5" id="four">
+            <div class="col-5 article" id="four">
             </div>
         </div>
         <div class="row">
             <img id="img5" src="" class="img-news">
-            <div class="col-5" id="five">
+            <div class="col-5 article" id="five">
             </div>
             <img id="img6" src="" class="img-news">
-            <div class="col-5" id="six">
+            <div class="col-5 article" id="six">
             </div>
         </div>
         <div class="row">
             <img id="img7" src="" class="img-news">
-            <div class="col-5" id="seven">
+            <div class="col-5 article" id="seven">
             </div>
             <img id="img8" src="" class="img-news">
-            <div class="col-5" id="eight">
+            <div class="col-5 article" id="eight">
             </div>
         </div>
     </div>

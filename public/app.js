@@ -37,69 +37,77 @@ function fetchFromWebTheGuardian() {
                 articlesArrayTG.push(data.response.results[i].webTitle);
                 articlesURLTG.push(data.response.results[i].webUrl);
             }
+            console.log(data.response)
         })
         .catch(err => console.log(err));
 };
 
 function addFetchedTextNYT() {
     var one = document.getElementById('one');
-    one.innerHTML = articlesArrayNYT[1] + " " + "<br> <a href=" + articlesURLNYT[1] + ">read more</a>";
+    one.innerHTML =  articlesArrayNYT[1] + " " + "<p></p><a href=" + articlesURLNYT[1] + ">read more</a> <hr>";
     document.getElementById("img1").src = articlesImageNYT[1];
 
-
     var one = document.getElementById('two');
-    one.innerHTML = articlesArrayNYT[2] + " " + "<br> <a href=" + articlesURLNYT[2] + ">read more</a>";
+    one.innerHTML = articlesArrayNYT[2] + " " + "<br> <a href=" + articlesURLNYT[2] + ">read more</a> <hr>";
     document.getElementById("img2").src = articlesImageNYT[2];
 
     var one = document.getElementById('three');
-    one.innerHTML = articlesArrayNYT[3] + " " + "<br> <a href=" + articlesURLNYT[3] + ">read more</a>";
+    one.innerHTML = articlesArrayNYT[3] + " " + "<br> <a href=" + articlesURLNYT[3] + ">read more</a> <hr>";
     document.getElementById("img3").src = articlesImageNYT[3];
 
     var one = document.getElementById('four');
-    one.innerHTML = articlesArrayNYT[4] + " " + "<br> <a href=" + articlesURLNYT[4] + ">read more</a>";
+    one.innerHTML = articlesArrayNYT[4] + " " + "<br> <a href=" + articlesURLNYT[4] + ">read more</a> <hr>";
     document.getElementById("img4").src = articlesImageNYT[4];
 
     var one = document.getElementById('five');
-    one.innerHTML = articlesArrayNYT[5] + " " + "<br> <a href=" + articlesURLNYT[5] + ">read more</a>";
+    one.innerHTML = articlesArrayNYT[5] + " " + "<br> <a href=" + articlesURLNYT[5] + ">read more</a> <hr>";
     document.getElementById("img5").src = articlesImageNYT[5];
 
     var one = document.getElementById('six');
-    one.innerHTML = articlesArrayNYT[6] + " " + "<br> <a href=" + articlesURLNYT[6] + ">read more</a>";
+    one.innerHTML = articlesArrayNYT[6] + " " + "<br> <a href=" + articlesURLNYT[6] + ">read more</a> <hr>";
     document.getElementById("img6").src = articlesImageNYT[6];
 
     var one = document.getElementById('seven');
-    one.innerHTML = articlesArrayNYT[7] + " " + "<br> <a href=" + articlesURLNYT[7] + ">read more</a>";
+    one.innerHTML = articlesArrayNYT[7] + " " + "<br> <a href=" + articlesURLNYT[7] + ">read more</a> <hr>";
     document.getElementById("img7").src = articlesImageNYT[7];
 
     var one = document.getElementById('eight');
-    one.innerHTML = articlesArrayNYT[8] + " " + "<br> <a href=" + articlesURLNYT[8] + ">read more</a>";
+    one.innerHTML = articlesArrayNYT[8] + " " + "<br> <a href=" + articlesURLNYT[8] + ">read more</a> <hr>";
     document.getElementById("img8").src = articlesImageNYT[8];
 };
 
 function addFetchedTextTG() {
     var one = document.getElementById('one');
-    one.innerHTML = articlesArrayTG[1] + " " + "<br> <a href=" + articlesURLTG[1] + ">read more</a>";
+    one.innerHTML = articlesArrayTG[1] + " " + "<br> <a href=" + articlesURLTG[1] + ">read more</a> <hr>";
+    document.getElementById("img1").src = "";
 
     var one = document.getElementById('two');
-    one.innerHTML = articlesArrayTG[2] + " " + "<br> <a href=" + articlesURLTG[2] + ">read more</a>";
+    one.innerHTML = articlesArrayTG[2] + " " + "<br> <a href=" + articlesURLTG[2] + ">read more</a> <hr>";
+    document.getElementById("img2").src = "";
 
     var one = document.getElementById('three');
-    one.innerHTML = articlesArrayTG[3] + " " + "<br> <a href=" + articlesURLTG[3] + ">read more</a>";
+    one.innerHTML = articlesArrayTG[3] + " " + "<br> <a href=" + articlesURLTG[3] + ">read more</a> <hr>";
+    document.getElementById("img3").src = "";
 
     var one = document.getElementById('four');
-    one.innerHTML = articlesArrayTG[4] + " " + "<br> <a href=" + articlesURLTG[4] + ">read more</a>";
+    one.innerHTML = articlesArrayTG[4] + " " + "<br> <a href=" + articlesURLTG[4] + ">read more</a> <hr>";
+    document.getElementById("img4").src = "";
 
     var one = document.getElementById('five');
-    one.innerHTML = articlesArrayTG[5] + " " + "<br> <a href=" + articlesURLTG[5] + ">read more</a>";
+    one.innerHTML = articlesArrayTG[5] + " " + "<br> <a href=" + articlesURLTG[5] + ">read more</a> <hr>";
+    document.getElementById("img5").src = "";
 
     var one = document.getElementById('six');
-    one.innerHTML = articlesArrayTG[6] + " " + "<br> <a href=" + articlesURLTG[6] + ">read more</a>";
+    one.innerHTML = articlesArrayTG[6] + " " + "<br> <a href=" + articlesURLTG[6] + ">read more</a> <hr>";
+    document.getElementById("img6").src = "";
 
     var one = document.getElementById('seven');
-    one.innerHTML = articlesArrayTG[7] + " " + "<br> <a href=" + articlesURLTG[7] + ">read more</a>";
+    one.innerHTML = articlesArrayTG[7] + " " + "<br> <a href=" + articlesURLTG[7] + ">read more</a> <hr>";
+    document.getElementById("img7").src = "";
 
     var one = document.getElementById('eight');
-    one.innerHTML = articlesArrayTG[8] + " " + "<br> <a href=" + articlesURLTG[8] + ">read more</a>";
+    one.innerHTML = articlesArrayTG[8] + " " + "<br> <a href=" + articlesURLTG[8] + ">read more</a> <hr>";
+    document.getElementById("img8").src = "";
 };
 
 
