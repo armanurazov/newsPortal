@@ -1,14 +1,26 @@
 {
   "name": "delete",
   "version": "1.0.0",
-  "description": "",
-  "main": "script.js",
+  "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.3",
+    "nodemon": "^2.0.15",
     "request": "^2.88.2"
-  }
+  },
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/armanurazov/newsPortal.git"
+  },
+  "bugs": {
+    "url": "https://github.com/armanurazov/newsPortal/issues"
+  },
+  "homepage": "https://github.com/armanurazov/newsPortal#readme",
+  "description": ""
 }
