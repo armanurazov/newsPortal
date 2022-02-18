@@ -110,7 +110,6 @@ function fetchFromWebBBC() {
                 articlesURLBBC.push(data.articles[i].url);
                 articlesImageBBC.push(data.articles[i].urlToImage);
             }
-            console.log(data)
         })
         .catch(err => console.log(err));
 };

@@ -73,6 +73,10 @@ button:hover {
   transform: scale(1.05);
 }
 
+.col-6-lg{
+    margin: auto;
+}
+
 
 
 
