@@ -6,6 +6,10 @@ var articlesArrayTG = [''];
 var articlesURLTG = [''];
 var articlesImageTG = [''];
 
+var articlesArrayGN = [''];
+var articlesURLGN = [''];
+var articlesImageGN = [''];
+
 
 document.onload =
     fetchFromWebNYT(),
@@ -13,7 +17,7 @@ document.onload =
     weatherWidget(),
     setDateAndTime(),
     fetchExchangeRates(),
-    fetchFromWebMeduza();
+    fetchFromWebGnews();
 
 
 function setDateAndTime() {
@@ -61,31 +65,35 @@ function fetchFromWebTheGuardian() {
             articlesArrayTG = [''];
             articlesURLTG = [''];
             articlesImageTG = [''];
-            //articlesImageNYT = [''];   // when TG images are added - delete line
+            logoTG = 'https://www.greenamerica.org/sites/default/files/mediasource/2020-04/The-guardian-logo.jpg'
             for (var i = 0; i < 10; i++) {
                 articlesArrayTG.push(data.response.results[i].webTitle);
                 articlesURLTG.push(data.response.results[i].webUrl);
+                articlesImageTG.push(logoTG);
             }
+            console.log(articlesImageTG)
         })
         .catch(err => console.log(err));
 };
 
-function fetchFromWebMeduza() {
-    fetch('https://meduza.io/api/v3/search?chrono=news&page=0&per_page=10&locale=ru')
+function fetchFromWebGnews() {
+    fetch('https://gnews.io/api/v4/search?q=example&token=674049e8bdccc70876cee79c89160e93')
+    
         .then(res => res.json())
         .then(data => {
-            // articlesArrayNYT = [''];
-            // articlesURLNYT = [''];
-            // articlesImageNYT = [''];
-            // for (var i = 0; i < 10; i++) {
-            //     articlesArrayNYT.push(data.results[i].title);
-            //     articlesURLNYT.push(data.results[i].url);
-            //     articlesImageNYT.push(data.results[i].media[0]["media-metadata"][2].url)
-            // }
-            console.log(data);
+            articlesArrayGN = [''];
+            articlesURLGN = [''];
+            articlesImageGN = [''];
+            for (var i = 0; i < 10; i++) {
+                articlesArrayGN.push(data.articles[i].title);
+                articlesURLGN.push(data.articles[i].url);
+                articlesImageGN.push(data.articles[i].image)
+            }
+            console.log(data.articles[1].image);
         })
         .catch(err => console.log(err));
 };
+
 
 function addFetchedTextNYT() {
     var one = document.getElementById('one');
@@ -155,6 +163,39 @@ function addFetchedTextTG() {
     document.getElementById("img8").src = "";
 };
 
+function addFetchedTextGN() {
+    var one = document.getElementById('one');
+    one.innerHTML = articlesArrayGN[1] + " " + "<p></p><a href=" + articlesURLGN[1] + ">read more</a> <hr>";
+    document.getElementById("img1").src = articlesImageGN[1];
+
+    var one = document.getElementById('two');
+    one.innerHTML = articlesArrayGN[2] + " " + "<br> <a href=" + articlesURLGN[2] + ">read more</a> <hr>";
+    document.getElementById("img2").src = articlesImageGN[2];
+
+    var one = document.getElementById('three');
+    one.innerHTML = articlesArrayGN[3] + " " + "<br> <a href=" + articlesURLGN[3] + ">read more</a> <hr>";
+    document.getElementById("img3").src = articlesImageGN[3];
+
+    var one = document.getElementById('four');
+    one.innerHTML = articlesArrayGN[4] + " " + "<br> <a href=" + articlesURLGN[4] + ">read more</a> <hr>";
+    document.getElementById("img4").src = articlesImageGN[4];
+
+    var one = document.getElementById('five');
+    one.innerHTML = articlesArrayGN[5] + " " + "<br> <a href=" + articlesURLGN[5] + ">read more</a> <hr>";
+    document.getElementById("img5").src = articlesImageGN[5];
+
+    var one = document.getElementById('six');
+    one.innerHTML = articlesArrayGN[6] + " " + "<br> <a href=" + articlesURLGN[6] + ">read more</a> <hr>";
+    document.getElementById("img6").src = articlesImageGN[6];
+
+    var one = document.getElementById('seven');
+    one.innerHTML = articlesArrayGN[7] + " " + "<br> <a href=" + articlesURLGN[7] + ">read more</a> <hr>";
+    document.getElementById("img7").src = articlesImageGN[7];
+
+    var one = document.getElementById('eight');
+    one.innerHTML = articlesArrayGN[8] + " " + "<br> <a href=" + articlesURLGN[8] + ">read more</a> <hr>";
+    document.getElementById("img8").src = articlesImageGN[8];
+};
 
 // fetching the weather widget 
 
@@ -170,7 +211,6 @@ function weatherWidget() {
         })
         .catch(err => console.log(err));
 };
-
 
 function f1() {
     alert('Booya kasha')
