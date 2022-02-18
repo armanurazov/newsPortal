@@ -219,11 +219,9 @@ function addFetchedTextGN() {
 
 function addFetchedTextBBC() {
     var one = document.getElementById('one');
-    console.log('html element found')
     one.innerHTML = articlesArrayBBC[1] + " " + "<p></p><a href=" + articlesURLBBC[1] + ">read more</a> <hr>";
-    console.log('text written in')
     document.getElementById("img1").src = articlesImageBBC[1];
-    console.log('image loaded')
+    console.log(articlesImageBBC[1])
 
     var one = document.getElementById('two');
     one.innerHTML = articlesArrayBBC[2] + " " + "<br> <a href=" + articlesURLBBC[2] + ">read more</a> <hr>";
