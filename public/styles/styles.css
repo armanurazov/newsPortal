@@ -3,6 +3,12 @@
     border-radius: 0px; */
     margin: 30px;
 }
+.container{
+    margin-top: 10px;
+    background-color: rgb(234, 250, 235);
+    border: 1px solid white;
+    border-radius: 25px;
+}
 
 .article{
     font-size: 20px;
@@ -20,11 +26,21 @@ button{
 
 .weather{
     display: flex;
-    margin: 15px;
+    margin-top: 0px;
     height: 170px;
     align-content: center;
     justify-content: center;
-    background-image: linear-gradient(to right, rgb(125, 213, 248), rgb(209, 252, 212));
+    background-image: linear-gradient(to right, rgb(125, 154, 248), rgb(234, 250, 235));
+}
+
+#date, #time{
+    text-align: right;
+    font-style: italic;
+}
+
+.currency{
+    text-align: right;
+    font-style: italic;
 }
 
 

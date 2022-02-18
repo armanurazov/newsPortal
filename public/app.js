@@ -6,8 +6,35 @@ var articlesArrayTG = [''];
 var articlesURLTG = [''];
 var articlesImageTG = [''];
 
-document.onload = fetchFromWebNYT(), fetchFromWebTheGuardian(), weatherWidget();
 
+
+
+
+document.onload = fetchFromWebNYT(), fetchFromWebTheGuardian(), weatherWidget(), setDateAndTime(), fetchExchangeRates();
+
+
+function setDateAndTime() {
+    var currDate = new Date();
+    var today = currDate.getFullYear() + '/' + (currDate.getMonth() + 1) + '/' + currDate.getDate();
+    var currTime = new Date();
+    var now = currTime.getHours() + ':' + currTime.getMinutes();
+    document.getElementById('date').innerHTML = today;
+    document.getElementById('time').innerHTML = 'EST ' + now;
+};
+
+
+
+function fetchExchangeRates() {
+    fetch('https://freecurrencyapi.net/api/v2/latest?apikey=256b0ba0-9079-11ec-a76b-c13b60cff3d9')
+        .then(res => res.json())
+        .then(data => {
+            console.log(data.data.CZK)
+            document.getElementById('CAD').innerHTML = data.data.CAD + " 🇨🇦";
+            document.getElementById('CZK').innerHTML = data.data.CZK + " 🇨🇿";
+            document.getElementById('KZT').innerHTML = data.data.KZT + " 🇰🇿";
+        })
+        .catch(err => console.log(err));
+};
 
 function fetchFromWebNYT() {
     fetch('https://api.nytimes.com/svc/mostpopular/v2/viewed/1.json?api-key=O3v5GAmiIwHIAd38835wV2WVXxKxmjoO')
@@ -37,14 +64,13 @@ function fetchFromWebTheGuardian() {
                 articlesArrayTG.push(data.response.results[i].webTitle);
                 articlesURLTG.push(data.response.results[i].webUrl);
             }
-            console.log(data.response)
         })
         .catch(err => console.log(err));
 };
 
 function addFetchedTextNYT() {
     var one = document.getElementById('one');
-    one.innerHTML =  articlesArrayNYT[1] + " " + "<p></p><a href=" + articlesURLNYT[1] + ">read more</a> <hr>";
+    one.innerHTML = articlesArrayNYT[1] + " " + "<p></p><a href=" + articlesURLNYT[1] + ">read more</a> <hr>";
     document.getElementById("img1").src = articlesImageNYT[1];
 
     var one = document.getElementById('two');
