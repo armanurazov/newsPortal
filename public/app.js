@@ -65,7 +65,7 @@ function fetchFromWebTheGuardian() {
             articlesArrayTG = [''];
             articlesURLTG = [''];
             articlesImageTG = [''];
-            logoTG = 'https://www.greenamerica.org/sites/default/files/mediasource/2020-04/The-guardian-logo.jpg'
+            logoTG = 'https://1000logos.net/wp-content/uploads/2021/05/The-Guardian-logo.png'
             for (var i = 0; i < 10; i++) {
                 articlesArrayTG.push(data.response.results[i].webTitle);
                 articlesURLTG.push(data.response.results[i].webUrl);
@@ -132,35 +132,35 @@ function addFetchedTextNYT() {
 function addFetchedTextTG() {
     var one = document.getElementById('one');
     one.innerHTML = articlesArrayTG[1] + " " + "<br> <a href=" + articlesURLTG[1] + ">read more</a> <hr>";
-    document.getElementById("img1").src = "";
+    document.getElementById("img1").src = articlesImageTG[1];
 
     var one = document.getElementById('two');
     one.innerHTML = articlesArrayTG[2] + " " + "<br> <a href=" + articlesURLTG[2] + ">read more</a> <hr>";
-    document.getElementById("img2").src = "";
+    document.getElementById("img2").src = articlesImageTG[2];
 
     var one = document.getElementById('three');
     one.innerHTML = articlesArrayTG[3] + " " + "<br> <a href=" + articlesURLTG[3] + ">read more</a> <hr>";
-    document.getElementById("img3").src = "";
+    document.getElementById("img3").src = articlesImageTG[3];
 
     var one = document.getElementById('four');
     one.innerHTML = articlesArrayTG[4] + " " + "<br> <a href=" + articlesURLTG[4] + ">read more</a> <hr>";
-    document.getElementById("img4").src = "";
+    document.getElementById("img4").src = articlesImageTG[4];
 
     var one = document.getElementById('five');
     one.innerHTML = articlesArrayTG[5] + " " + "<br> <a href=" + articlesURLTG[5] + ">read more</a> <hr>";
-    document.getElementById("img5").src = "";
+    document.getElementById("img5").src = articlesImageTG[5];
 
     var one = document.getElementById('six');
     one.innerHTML = articlesArrayTG[6] + " " + "<br> <a href=" + articlesURLTG[6] + ">read more</a> <hr>";
-    document.getElementById("img6").src = "";
+    document.getElementById("img6").src = articlesImageTG[6];
 
     var one = document.getElementById('seven');
     one.innerHTML = articlesArrayTG[7] + " " + "<br> <a href=" + articlesURLTG[7] + ">read more</a> <hr>";
-    document.getElementById("img7").src = "";
+    document.getElementById("img7").src = articlesImageTG[7];
 
     var one = document.getElementById('eight');
     one.innerHTML = articlesArrayTG[8] + " " + "<br> <a href=" + articlesURLTG[8] + ">read more</a> <hr>";
-    document.getElementById("img8").src = "";
+    document.getElementById("img8").src = articlesImageTG[8];
 };
 
 function addFetchedTextGN() {
