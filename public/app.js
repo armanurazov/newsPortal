@@ -97,8 +97,6 @@ function fetchFromWebGnews() {
         .catch(err => console.log(err));
 };
 
-//https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=a1251c7ac6624dbeabccb96f7a7a9ac8
-
 function fetchFromWebBBC() {
     fetch('https://newsapi.org/v2/top-headlines?sources=bbc-news&apiKey=a1251c7ac6624dbeabccb96f7a7a9ac8')
 
@@ -107,12 +105,11 @@ function fetchFromWebBBC() {
             articlesArrayBBC = [''];
             articlesURLBBC = [''];
             articlesImageBBC = [''];
-            for (var i = 0; i < 10; i++) {
+            for (var i = 0; i < 8; i++) {
                 articlesArrayBBC.push(data.articles[i].description);
                 articlesURLBBC.push(data.articles[i].url);
-                articlesImageBBC.push(data.articles[i].urlToImage)
+                articlesImageBBC.push(data.articles[i].urlToImage);
             }
-            console.log(data.articles[1]);
         })
         .catch(err => console.log(err));
 };
@@ -222,8 +219,11 @@ function addFetchedTextGN() {
 
 function addFetchedTextBBC() {
     var one = document.getElementById('one');
+    console.log('html element found')
     one.innerHTML = articlesArrayBBC[1] + " " + "<p></p><a href=" + articlesURLBBC[1] + ">read more</a> <hr>";
+    console.log('text written in')
     document.getElementById("img1").src = articlesImageBBC[1];
+    console.log('image loaded')
 
     var one = document.getElementById('two');
     one.innerHTML = articlesArrayBBC[2] + " " + "<br> <a href=" + articlesURLBBC[2] + ">read more</a> <hr>";
